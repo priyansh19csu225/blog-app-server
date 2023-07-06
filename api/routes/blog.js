@@ -1,0 +1,10 @@
+const express = require("express");
+const router = express.Router();
+const { createBlog , updateBlog , deleteBlogById , getBlogByid , getAllBlogs} = require("../../controllers/blog");
+const { CREATE, UPDATE, FIND_ONE , DELETE  , FIND_ALL } = require("../../utils/config").ROUTES.BLOG;
+router.get(FIND_ALL, getAllBlogs);
+router.get(FIND_ONE , getBlogByid);
+router.post(CREATE , createBlog);
+router.put(UPDATE, updateBlog);
+router.delete(DELETE, deleteBlogById);
+module.exports = router;
